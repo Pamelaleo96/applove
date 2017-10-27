@@ -2,10 +2,9 @@
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-div {
-  display: block;
+  box-sizing: border-box; /**/
+  margin: 0; /*h6 no tenga margen*/
+  padding: 0;
 }
 
 *:before, *:after {
@@ -18,14 +17,14 @@ body {
   margin: 0 auto;
   font-size: 16px;
   line-height: 1.71429;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway"; /*Agregamos fonts*/
 }
 
 img {
   vertical-align: middle;
 }
 
-.container {
+.container { /*Contenedor: ocupe cada fila del navegador(para cada imagen de work)*/
   width: 1200px;
   margin-right: auto;
   margin-left: auto;
@@ -38,13 +37,7 @@ img {
   display: table;
 }
 
-*:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.container:after {
+.container:after { /*no admite elemento ni a su izquierda ni a su derecha*/
   clear: both;
 }
 
@@ -57,53 +50,88 @@ img {
 }
 
 .m-0 {
-  margin: 0px;
+  margin: 0px; /*afecta a todos los lados*/
 }
 
 a {
   color: #373B47;
-  text-decoration: none;
+  text-decoration: none; /*Quitamos el subrayado*/
 }
 
 a:hover {
-  color: #E95853;
+  color: #E95853; /*Cambiar de color cuando el maouse pasa por el a*/
 }
 
 .text-uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase;/*Convierte el texto a mayuscula*/
 }
 
 /*ESCRIBE TU CÓDIGO DESDE AQUÍ*/
 
-
-a:-webkit-any-link {
-  color: webkit link;
-  cursor: auto;
-  text-decoration: underline;
+.inline-block { /*2*/
+  display: inline-block;
 }
 
-
-header {
-  background-color: #fff;
+header { /*1°*/
+  background-color: white;
   position: fixed;
-  text-align: left;
   top: 0;
   width: 100%;
+  font-weight: bold;
+  padding-top: 20px; /*da un relleno a los navegadores */
+  z-index: 1000; /* 6 z-index-> sirve para trabajar por capas (traer adelante on retroceder capas antes o delante de otro)*/
 }
 
+header figure img { /*3*/
+  width: 70px;
+  margin-right: 180px;
+}
 
-header .menu {
-  margin: 30px;
-  margin-bottom: 40px;
-  margin-left: 66px;
-  font-size: 16px;
+header figure { /*4 colocamos el logo a la derecha*/
+  float: right;
+}
+
+header div {
+  margin-left: 190px; /*5° separa el navegador con los servicios empezando de izquierda*/
+  margin-top: 10px;
+}
+
+header div a {
+  margin: 0 20px; /*7*/
   font-weight: bold;
 }
 
-header .logo img {
-  display: block;
-  width: 100%;
+/*STYLE FOR THE SECTION INTRO*/
+#intro {
+  text-align: center;
+  background-image: url("../assets/images/bg-home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 87px;
+  height: 547px;
 }
+#intro div {
+  margin-top: 70px;
+  color: white;
+}
+
+#intro h1 {
+  font-size: 52px;
+  margin-bottom: 0px;
+  font-weight: bold; 
+}
+
+#intro h2 {
+  padding-top: 80px;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+#intro p {
+  margin-bottom: 70px; 
+ }
+  
 .button {
   background-color: #2Ecc71;
   color: white;
@@ -112,60 +140,79 @@ header .logo img {
   display: inline-block;
   padding: 10px 18px;
 }
-.hero, .services {
-  color: #fff;
+
+/*STYLE FOR THE SECTION SERVICES*/
+#services {
+  background-color: #E95853;
+  width: 100%;
+  color: white;
+  font-weight: 700;
+  text-align: center;
 }
+
+#services h2 {
+  font-size: 36px;
+  padding-top: 80px;
+  margin-bottom: 40px;
+}
+
+.service {
+  display: inline-block;
+  margin: 0 70px 84px;
+}
+
 .service img {
   margin: 70px 0 20px;
   width: 200px;
 }
 
-.work .big-image {
-  display: block;
-  margin: auto;
-  width: 80%;
+.service h6 {
+  margin-top: 0;
 }
 
-.work .proyect-name {
+/*STYLE FOR THE SECTION WORKS*/
+#works {
+  text-align: center;
+}
+#works h2 {
+  font-size: 36px;
+  padding-top: 80px;
+  margin-bottom: 35px;
+}
+
+#works h4 {
+  margin-bottom: 45px;
+}
+
+#works figure img {
+  display: block;
+  margin: auto;
+  width: 65%;
+}
+
+#works .box {
+  display: inline-block;
+  margin: 30px; /*Margen entre las cajas de work*/
+  width: 300px;
+}
+
+#works .box img {
+  display: block;
+  width: 100%; /*Extiende la imagen de work*/
+}
+
+#works .proyect-name {
   color: #444;
   font-weight: bold;
   padding: 20px 0 0;
   text-transform: uppercase;
 }
 
-h2 {
-  display: block;
-  font-size: 1.5em;
-  -webkit-margin-before: 0.83em;
-  -webkit-margin-after: 0.83em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  font-weight: bold;
-}
-
-.work h4 {
-  margin-bottom: 45px;
-}
-
-h4 {
-  display: block;
-  -webkit-margin-before: 1.33em;
-  -webkit-margin-after: 1.33em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  font-weight: bold;
-}
-
-.container {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 14px;
-  padding-right: 14px;
-}
+/*STYLE FOR THE FOOTER*/
 footer {
   background-color: #373b47;
-  color: white;
+  color: #fff;
   margin: 80px 0 0;
   padding: 20px 0;
+  text-align: center;
 }
